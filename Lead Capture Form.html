@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+   <HEAD>
+      <title>Create OnLIne Lead</title>
+      <META http-equiv="Content-Type" content="text/html; charset=windows-1252">
+      <meta content="JavaScript" name="vs_defaultClientScript">
+      <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+         }
+         form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+         }
+         table {
+            width: 100%;
+            border-spacing: 0;
+            margin-bottom: 20px;
+         }
+         table td {
+            padding: 10px;
+            vertical-align: top;
+         }
+         input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+         }
+         input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+         }
+         input[type="submit"]:hover {
+            background-color: #0056b3;
+         }
+         tr:nth-child(even) {
+            background-color: #f9f9f9;
+         }
+         h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+         }
+         @media screen and (max-width: 600px) {
+            table {
+               width: 100%;
+            }
+            td {
+               display: block;
+               width: 100%;
+            }
+         }
+      </style>
+   </HEAD>
+   <body>
+      <h2>Apply for Assure Life Insurance Plan</h2>
+      <form id="OnLineLeadForm" method="post" action="https://presales.businessbywire.com/appli/ProcessAnonymous/OnlineLeadCapture?x=25xgkuqlsapsn67x4pygd2jkryrjzq4695d82p6tb9hvqekangr5nnf9wj8435xr8a2hefqfjl456c8k4fvswhdkt8nf36pbyjeralpkwcb2nzkv2rfq">
+         <input type="hidden" name="debug" value="1" /> 
+         <input type="hidden" name="debugEmail" value="lifeinsurance@crmnext.com" /> 
+         <input type="hidden" name="SuccessReturnURL" value="https://presales.businessbywire.com/appli/businessnext/Home/lead" /> 
+         <input type="hidden" name="FailureReturnURL" value="https://presales.businessbywire.com/appli/businessnext/Home/lead" />
+         
+         <table>
+            <tr>
+               <td>First Name</td>
+               <td>
+                  <select id="Salutation" name="Salutation">
+                     <option value="0"></option>
+                     <option value="100001">Co.</option>
+                     <option value="100002">LLP</option>
+                     <option value="100000">Pvt Ltd</option>
+                     <option value="1">Mr.</option>
+                     <option value="2">Ms.</option>
+                     <option value="3">Dr.</option>
+                     <option value="4">Mrs.</option>
+                  </select>
+                  <input type="text" id="FName" name="FName">
+               </td>
+            </tr>
+            <tr>
+               <td>Last Name</td>
+               <td><input type="text" id="LName" name="LName"></td>
+            </tr>
+            <tr>
+               <td>Company</td>
+               <td><input type="text" id="Company" name="Company"></td>
+            </tr>
+            <tr>
+               <td>Product</td>
+               <td>
+                  <select id="Product" name="Product" onchange="UpdateProductName();">
+                     <option value="74">Assure Life</option>
+                     <!-- Other options truncated for brevity -->
+                  </select>
+                  <input id="ProductName" name="ProductName" type="hidden" value="Accident Care Individual Insurance Policy">
+               </td>
+            </tr>
+            <tr>
+               <td><i>Please provide your contact details!</i></td>
+               <td>
+                  <select id="StatusCode" name="StatusCode" style="display: none;">
+                     <option value="1272">New Lead</option>
+                     <!-- Other options truncated for brevity -->
+                  </select>
+               </td>
+            </tr>
+            <tr>
+               <td><i>Our team will reach out to you for further steps.</i></td>
+               <td>
+                  <select id="Layout" name="Layout" style="display: none;">
+                     <option value="202571">Telecalling</option>
+                     <!-- Other options truncated for brevity -->
+                  </select>
+               </td>
+            </tr>
+            <tr>
+               <td>Mobile Phone</td>
+               <td><input type="text" id="MobPhone" name="MobPhone"></td>
+            </tr>
+            <tr>
+               <td>Email</td>
+               <td><input type="text" id="Email" name="Email"></td>
+            </tr>
+            <tr>
+               <td colspan="2" style="text-align:center">
+                  <input type="submit" name="submit" id="submit" value="Request a call back" onclick="return IsValidForm();">
+               </td>
+            </tr>
+         </table>
+      </form>
+	  <script > function UpdateProductName() { var prodObj = document.getElementById('Product'); var prodNameObj = document.getElementById('ProductName'); prodNameObj.value = prodObj.options[prodObj.selectedIndex].text; } function UpdateTerritoryName() { var terrObj = document.getElementById('Territory'); var terrNameObj = document.getElementById('TerritoryName'); terrNameObj.value = terrObj.options[terrObj.selectedIndex].text; } function IsValidForm() { var errMessage = ''; if ( document.getElementById('LName').value == '') { errMessage = 'Enter LastName.\n'; } if (document.getElementById('Company').value == '') { errMessage += 'Enter Company.\n'; } if ( !IsValidEmail() ) { errMessage += 'Not a valid EmailID.\n'; } if ( !IsValidWebURL() ) { errMessage += 'Not a valid WebUrl.\n'; } if ( errMessage != '' ){ alert(errMessage); return false; } return true; } function IsValidEmail() { if (document.getElementById('Email') == null) return true; var inem = document.getElementById("Email").value; if( inem != null && inem !='') { var filter=/^(\w+(?:\.\w+)*)@((?:\w+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i; if ( !filter.test(inem) ) return false; } return true; } function IsValidWebURL() { return true; var website = document.getElementById("Website").value; var URL = /^((file|http):\/\/\S)*$/; if ( !URL.test(website) ) return false; return true; }</script>
+   </body>
+</HTML>
